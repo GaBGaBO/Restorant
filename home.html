@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="css/style.css"> <!--this is custom css file-->
+    
+
+       <title> 
+      Home
+    </title> 
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+    <!--font awesome cdn link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head> 
+  
+  <body>
+ <!--Header section Starts-->
+ <header class="header">  
+  <section class="flex">
+    <a href="home.html" class="logo">Zeus Restorant &#127831; </a>
+    <!--ჩვენ უნდა დავწეროთ ნავბარში სათაურები ლინკებთან ერთად, რომ როდესაც მასზე მოვახდენთ დაწოლას
+    შევძლოთ და გადავიდეს იმ გვერდზე რა სათაურიც ჩვენ გვაქვს მითითებული-->
+    <nav class="navbar">
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="menu.html">Menu</a>
+      <a href="order.html">Order</a>
+      <a href="contact.html">Contact</a>
+      <div class="portfolio">
+      </div>
+    </nav>
+    <!--აქ არის წარმოდგენილი კლასი icons სადაც არის წარმოდგენილი აიქონები-->
+    <div class="icons">
+  <a href="search.html"><i class="fas fa-search"></i></a> <!--როცა დავაწვებით სერრჩის აიქონს, გადავა სერჩის გვერდზე-->
+   <a href="cart.html"><i class="fas fa-shopping-cart"></i><span>(3)</span></a>
+     <div id="user-btn" class="fas fa-user"></div> <!--ეს არის იუზერის აიქონი :)-->
+   <div id="menu-btn" class="fas fa-bars"></div>
+    </div>
+    <!--აქ არის უვკე წარმოდგენილი პროფილის სტრუქტურა, სახელი გვარი შესასვლელი გამოსასვლელი და ა.ს.შ-->
+    <div class="profile">
+      <p class="name">anri gabaidze</p>
+      <div class="flex">
+        <a href="profile.html" class="btn">Profile</a>
+        <a href="#" class="delete-btn">Logoout</a>
+      </div>
+       <p class="account"><a href="login.html">login</a> or <a href="register.html">register</a></p>
+    </div>
+
+  </section>
+   
+ </header>
+ <!--Header section Ends-->
+
+ <!--hero section starts--> 
+ <!--hero section გამოიყენება მაშინ როდესაც ჩვენი მომხმარებელი ხედავს ჩვენს ვებსაიტს პირველად და
+მასში არის მოთავსებული რაღაცა სახის ინფორმაციები და ასე შემდეგ, (ლოგო, მენიუები)-->
+<section class="hero">
+  <!--თავიდან ჩვეულებრივ ვაკეთებთ რაღაც კლასებს და ამაზე ვახდენთ მანიპულაციებს, ვქმნით 3 ერთი და იგივე
+  ელემენტის მქოდნე კოდებს და სხვადასხვა შინაარსის ინფორმაციას ვათავსებთ შიგ -->
+  <!--შემდეგ უკვე სიესესში ვახდენთ მასსში მანიპულირებას და გავაკეთებთ ისე რომ ჩვენი მოცემული ინფორმაციები 
+  იყოს ერთმანეთის ჩამოყოლებით ქვევით :)), ხოლო მერე უკვე შევდივართ
+   swiperjs.com--get started--Use Swiper from CDN--da jer css link shemdeg js link vakopirebt--> 
+   <!--shemdeg demo--pagination--da core-- da vigebt ukve kodebs swiperis-->
+   <!--კლასებსშევუცვლით სახელებს და swiperებს დავარქმევთ-->
+   <!--swiper-pagination საც გადმოვიტანთ დივ კლასსში, და მერე ვიწყებთ body ში სკრიპტის დაწერას-->
+   <!--
+    <script>
+    var swiper = new Swiper(".hero-slider", { რადგან ჰერო სოლდიერ გვაქვს კლასი და მაასზე მოვახდენთ წვდომას
+      loop:true,
+      grabCursor: true,
+      effect: "flip",
+        pagination: {
+          el: ".swiper-pagination",
+          clickable:true,
+        },
+      });
+
+  </script>
+
+   -->
+
+
+  <div class="swiper hero-slider">
+
+   <div class="swiper-wrapper">
+
+       <div class="swiper-slide slide">
+        <div class="content">
+           <span>order online</span>
+           <h3>delicious pizza</h3>
+           <a href="menu.html" class="btn">see menus</a>
+        </div>
+        <div class="image">
+          <img src="images/home-img-1q.png" alt="">
+        </div>
+       </div>
+       <!--ზემოთ მოცემულ კოდს ვაკოპირებთ და ვაკეთებთ ანალოგიურს ოღონდ განსხვავებული ინფორმაციით-->
+       <div class="swiper-slide slide">
+        <div class="content">
+           <span>order online</span>
+           <h3>chezzy hamburger</h3>
+           <a href="menu.html" class="btn">see menus</a>
+        </div>
+        <div class="image">
+          <img src="images/home-img-2.png" alt="">
+        </div>
+       </div>
+       <div class="swiper-slide slide">
+        <div class="content">
+           <span>order online</span>
+           <h3>rosted chicken</h3>
+           <a href="menu.html" class="btn">see menus</a>
+        </div>
+        <div class="image">
+          <img src="images/home-img-3.png" alt="">
+        </div>
+       </div>
+   </div>
+   <div class="swiper-pagination"></div>
+
+  </div>
+
+</section>
+  <!--hero section ends-->
+
+  <!--category class start-->
+  <!--კატეგორი კლასი არის შექმნილი იმისთვის სადაც არის წარმოდგენილი საჭმელების კატეგორია-->
+  <section class="category">
+    <h1 class="title">
+      food category
+    </h1>
+
+   <div class="box-container">
+
+    <a href="#" class="box">   
+   <img src="images/cat-1.png" alt="">
+   <h3>fast food</h3>
+    </a>
+
+    <a href="#" class="box">
+      <img src="images/cat-2.png" alt="">
+      <h3>mainc dishes</h3>
+    </a>
+
+      <a href="#" class="box">
+        <img src="images/cat-3.png" alt="">
+        <h3>drinks</h3>
+      </a>
+
+         <a href="#" class="box">
+          <img src="images/cat-4.png" alt="">
+          <h3>desserts</h3>
+         </a>
+
+   </div>
+
+  </section>
+    <!--category class end-->
+
+    <!--home product section starts-->
+    <!--ეს არის სექცია სადაც ჩვენ ვაკეთებთ კარტას  და ბოლო საჭმელებს წარმოვადგენთ ეხლა-->
+    <!--კოდსს სადაც დავწერთ   კონკრეტულად იქ გამოჩნდება ჰთმლ დოკუმენტში,ანუ პრეზენტაციის შრეზე :))-->
+    <!--კონკრეტულად კი ეხლა მაგალითად ეს კოდი გვიწერია კატეგორის და ფუთერის შუაშია აქიდან გამომდინარე ჰთმლ დოკუმენტშიც ის
+    გამოჩნდება როგორც ამათ შორის დაწერილი კოდი-->
+    <section class="products">
+      <h1 class="title">latest dishes</h1> <!--title კლასი გვაქვს უკვე გამოყენებული რაც იმას ნიშნავს რომ ის ავტომატურად დაიწერება
+      შუაში -->
+  
+      <!--შემდეგ უკვე ვქმნით რაღაც ბათონების მსგავს სადაც აიქონებს ვსვამთ, სახელები უბრალოდ მათი შესაფერისია -->
+      <div class="box-container">
+        <form action="" method="post" class="box">
+<button type="submit" class="fas fa-eye" name="quick_view"></button>
+ <button type="submit" class="fas fa-shopping-cart" name="add_to_cart"></button>
+ <!--აქ შემდეგ ჩავაგდებთ ფოტოს და სათაურს-->
+ <img src="uploaded_img/burger-1.png" alt="">
+ <a href="#" class="cat">fast food</a>
+     
+     <!--აქ ქვემოდან ვუწერთ მას მის სახელწოდებას-->
+    <div class="name">chezzy burger 01</div>
+     <div class="flex">
+      <div class="price"><span>$</span>3</div> <!--ფასი შეიქმნა-->
+      <!--ეს ნიშნავს რომ შეკვეთის რაოდენობას ვაკეთებთ ფაქტიურად :), მინ და მაქს ნიშნავს რომ მინიმალური 1 დან დაიწყება და 99
+      ის შეკვეთა შეგვეძლება ანუ 99 ამდე ავა რიცხცვი-->
+      <!--ხოლო ველიუში რაც გვიწერია ნიშნავს იმას რომ საიდან და რამდენიდან დაიწყოს ათვლა, ანუ ღირებულება რამდენი იყოს თავიდან-->
+      <input type="number" name="qty" class="qty" min="1" max="99" value ="1" onkeypress="if(this.value.length == 2)return false;">
+      <!-- ხოლო ონქეიფრესს ფუნქციაში გვიწერია რომ თუ ამ ღირებულების(1) ის სიგრძე გაუტოლდება 2ს დააბრუნე რომ ის არის ფოლსი,
+      მაგრამ ამ შემთხვევაში დააბრუნებს რა თქმა უნდა თრუს რადგან მისი სიგრძე არის 1 და და არა  2, ამიტომ ფოლსი ვერ დაბრუნდება-->
+      
+     </div>
+  
+  </form> 
+
+  <form action="" method="post" class="box">
+    <button type="submit" class="fas fa-eye" name="quick_view"></button>
+     <button type="submit" class="fas fa-shopping-cart" name="add_to_cart"></button>
+     <!--აქ შემდეგ ჩავაგდებთ მეორე ფოტოს და ისევ თავის ზოგადად სახელწოდებას, სათაურს , მაგალითად აქ არის მთავარი კერძი, ძევით იყო ფასთ ფუდი და ასე შემდეგ-->
+     <img src="uploaded_img/dish-1.png" alt="">
+     <a href="#" class="cat">dishes</a>
+         
+         <!--აქ ქვემოდან ვუწერთ თვითონ პროდუქტის  სახელწოდებას-->
+        <div class="name">main dish 01</div>
+         <div class="flex">
+          <div class="price"><span>$</span>3</div> <!--ფასი შეიქმნა-->
+          <!--ეს ნიშნავს რომ შეკვეთის რაოდენობას ვაკეთებთ ფაქტიურად :), მინ და მაქს ნიშნავს რომ მინიმალური 1 დან დაიწყება და 99
+          ის შეკვეთა შეგვეძლება ანუ 99 ამდე ავა რიცხცვი-->
+          <!--ხოლო ველიუში რაც გვიწერია ნიშნავს იმას რომ საიდან და რამდენიდან დაიწყოს ათვლა, ანუ ღირებულება რამდენი იყოს თავიდან-->
+          <input type="number" name="qty" class="qty" min="1" max="99" value ="1" onkeypress="if(this.value.length == 2)return false;">
+          <!-- ხოლო ონქეიფრესს ფუნქციაში გვიწერია რომ თუ ამ ღირებულების(1) ის სიგრძე გაუტოლდება 2ს დააბრუნე რომ ის არის ფოლსი,
+          მაგრამ ამ შემთხვევაში დააბრუნებს რა თქმა უნდა თრუს რადგან მისი სიგრძე არის 1 და და არა  2, ამიტომ ფოლსი ვერ დაბრუნდება-->
+          
+         </div>
+      
+      </form> 
+
+      <form action="" method="post" class="box">
+        <button type="submit" class="fas fa-eye" name="quick_view"></button>
+         <button type="submit" class="fas fa-shopping-cart" name="add_to_cart"></button>
+         <img src="uploaded_img/dessert-1.png" alt="">
+         <a href="#" class="cat">desserts</a>
+             
+            <div class="name">delicious deserts 01</div>
+             <div class="flex">
+              <div class="price"><span>$</span>3</div> <!--ფასი შეიქმნა-->
+              <!--ეს ნიშნავს რომ შეკვეთის რაოდენობას ვაკეთებთ ფაქტიურად :), მინ და მაქს ნიშნავს რომ მინიმალური 1 დან დაიწყება და 99
+              ის შეკვეთა შეგვეძლება ანუ 99 ამდე ავა რიცხცვი-->
+              <!--ხოლო ველიუში რაც გვიწერია ნიშნავს იმას რომ საიდან და რამდენიდან დაიწყოს ათვლა, ანუ ღირებულება რამდენი იყოს თავიდან-->
+              <input type="number" name="qty" class="qty" min="1" max="99" value ="1" onkeypress="if(this.value.length == 2)return false;">
+              <!-- ხოლო ონქეიფრესს ფუნქციაში გვიწერია რომ თუ ამ ღირებულების(1) ის სიგრძე გაუტოლდება 2ს დააბრუნე რომ ის არის ფოლსი,
+              მაგრამ ამ შემთხვევაში დააბრუნებს რა თქმა უნდა თრუს რადგან მისი სიგრძე არის 1 და და არა  2, ამიტომ ფოლსი ვერ დაბრუნდება-->
+              
+             </div>
+          
+          </form> 
+
+          <form action="" method="post" class="box">
+            <button type="submit" class="fas fa-eye" name="quick_view"></button>
+             <button type="submit" class="fas fa-shopping-cart" name="add_to_cart"></button>
+             <!--აქ შემდეგ ჩავაგდებთ მეორე ფოტოს და ისევ თავის ზოგადად სახელწოდებას, სათაურს , მაგალითად აქ არის მთავარი კერძი, ძევით იყო ფასთ ფუდი და ასე შემდეგ-->
+             <img src="uploaded_img/drink-1.png" alt="">
+             <a href="#" class="cat">drinks</a>
+                 
+                 <!--აქ ქვემოდან ვუწერთ თვითონ პროდუქტის  სახელწოდებას-->
+                <div class="name">cold drinks 01</div>
+                 <div class="flex">
+                  <div class="price"><span>$</span>3</div> <!--ფასი შეიქმნა-->
+                  <!--ეს ნიშნავს რომ შეკვეთის რაოდენობას ვაკეთებთ ფაქტიურად :), მინ და მაქს ნიშნავს რომ მინიმალური 1 დან დაიწყება და 99
+                  ის შეკვეთა შეგვეძლება ანუ 99 ამდე ავა რიცხცვი-->
+                  <!--ხოლო ველიუში რაც გვიწერია ნიშნავს იმას რომ საიდან და რამდენიდან დაიწყოს ათვლა, ანუ ღირებულება რამდენი იყოს თავიდან-->
+                  <input type="number" name="qty" class="qty" min="1" max="99" value ="1" onkeypress="if(this.value.length == 2)return false;">
+                  <!-- ხოლო ონქეიფრესს ფუნქციაში გვიწერია რომ თუ ამ ღირებულების(1) ის სიგრძე გაუტოლდება 2ს დააბრუნე რომ ის არის ფოლსი,
+                  მაგრამ ამ შემთხვევაში დააბრუნებს რა თქმა უნდა თრუს რადგან მისი სიგრძე არის 1 და და არა  2, ამიტომ ფოლსი ვერ დაბრუნდება-->
+                  
+                 </div>
+              
+              </form> 
+
+              <form action="" method="post" class="box">
+                <button type="submit" class="fas fa-eye" name="quick_view"></button>
+                 <button type="submit" class="fas fa-shopping-cart" name="add_to_cart"></button>
+                 <!--აქ შემდეგ ჩავაგდებთ მეორე ფოტოს და ისევ თავის ზოგადად სახელწოდებას, სათაურს , მაგალითად აქ არის მთავარი კერძი, ძევით იყო ფასთ ფუდი და ასე შემდეგ-->
+                 <img src="uploaded_img/pizza-3.png" alt="">
+                 <a href="#" class="cat">fast food</a>
+                     
+                     <!--აქ ქვემოდან ვუწერთ თვითონ პროდუქტის  სახელწოდებას-->
+                    <div class="name">delicious pizza  01</div>
+                     <div class="flex">
+                      <div class="price"><span>$</span>3</div> <!--ფასი შეიქმნა-->
+                      <!--ეს ნიშნავს რომ შეკვეთის რაოდენობას ვაკეთებთ ფაქტიურად :), მინ და მაქს ნიშნავს რომ მინიმალური 1 დან დაიწყება და 99
+                      ის შეკვეთა შეგვეძლება ანუ 99 ამდე ავა რიცხცვი-->
+                      <!--ხოლო ველიუში რაც გვიწერია ნიშნავს იმას რომ საიდან და რამდენიდან დაიწყოს ათვლა, ანუ ღირებულება რამდენი იყოს თავიდან-->
+                      <input type="number" name="qty" class="qty" min="1" max="99" value ="1" onkeypress="if(this.value.length == 2)return false;">
+                      <!-- ხოლო ონქეიფრესს ფუნქციაში გვიწერია რომ თუ ამ ღირებულების(1) ის სიგრძე გაუტოლდება 2ს დააბრუნე რომ ის არის ფოლსი,
+                  მაგრამ ამ შემთხვევაში დააბრუნებს რა თქმა უნდა თრუს რადგან მისი სიგრძე არის 1 და და არა  2, ამიტომ ფოლსი ვერ დაბრუნდება-->
+                      
+                     </div>
+                  
+                  </form> 
+
+                  <form action="" method="post" class="box">
+                    <button type="submit" class="fas fa-eye" name="quick_view"></button>
+                     <button type="submit" class="fas fa-shopping-cart" name="add_to_cart"></button>
+                     <!--აქ შემდეგ ჩავაგდებთ მეორე ფოტოს და ისევ თავის ზოგადად სახელწოდებას, სათაურს , მაგალითად აქ არის მთავარი კერძი, ძევით იყო ფასთ ფუდი და ასე შემდეგ-->
+                     <img src="uploaded_img/dish-2.png" alt="">
+                     <a href="#" class="cat">dishes</a>
+                         
+                         <!--აქ ქვემოდან ვუწერთ თვითონ პროდუქტის  სახელწოდებას--> <!--თუმცა ეს რატო არ ჩანს ხუიოზნაეტ-->
+                        <div class="name">main dish 02</div>
+                         <div class="flex">
+                          <div class="price"><span>$</span>3</div> <!--ფასი შეიქმნა-->
+                          <!--ეს ნიშნავს რომ შეკვეთის რაოდენობას ვაკეთებთ ფაქტიურად :), მინ და მაქს ნიშნავს რომ მინიმალური 1 დან დაიწყება და 99
+                          ის შეკვეთა შეგვეძლება ანუ 99 ამდე ავა რიცხცვი-->
+                          <!--ხოლო ველიუში რაც გვიწერია ნიშნავს იმას რომ საიდან და რამდენიდან დაიწყოს ათვლა, ანუ ღირებულება რამდენი იყოს თავიდან-->
+                          <input type="number" name="qty" class="qty" min="1" max="99" value ="1" onkeypress="if(this.value.length == 2)return false;">
+                          <!-- ხოლო ონქეიფრესს ფუნქციაში გვიწერია რომ თუ ამ ღირებულების(1) ის სიგრძე გაუტოლდება 2ს დააბრუნე რომ ის არის ფოლსი,
+                          მაგრამ ამ შემთხვევაში დააბრუნებს რა თქმა უნდა თრუს რადგან მისი სიგრძე არის 1 და და არა  2, ამიტომ ფოლსი ვერ დაბრუნდება-->
+                          
+                         </div>
+                      
+                      </form> 
+        
+
+      </div>
+      <div class="more-btn">
+        <a href="menu.html" class="btn">view all</a>
+      </div>
+
+    </section>
+   <!--home product section end-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--ვქმნით footerს რომელშიც ვათავსებთ სექციას,ინფორმაციას,ტექსტებს,ფოტოებს და შემდეგ მასზე ვაკეთებთ წვდომას-->
+ <!--footer section start-->
+
+<footer class="footer">
+  <section class="grid">
+    <div class="box">
+      <!--ეს არის იმაილის სურათი და მისი ტექსტები-->
+      <img src="images/email-icon.png" alt="">
+      <h3>our email</h3>
+      <a href="mailto:anrigabaidze44@gmail.com">anrigabaidze44@gmail.com</a>
+    </div>
+
+      <!--ეს არის საათის სურათი და მისი ტექსტები-->
+    <div class="box">
+      <img src="images/clock-icon.png" alt="">
+      <h3>opening hours</h3>
+      <p>00:00am to 00:00pm</p>  
+    </div>
+          <!--ეს არის მაპის სურათი და მისი ტექსტები-->
+    <div class="box">
+      <img src="images/map-icon.png" alt="">
+      <h3>our address</h3>
+      <a href="#">Georgia, Batumi  - 400300</a>
+    </div>
+  <!--ეს არის ტელეფონის სურათი და მისი ტექსტები-->
+    <div class="box">
+      <img src="images/phone-icon.png" alt="">
+      <h3>our number</h3>
+      <a href="tel:568 63 32 16">tel:568 63 32 16</a>
+    <!--ყველაზე ვაკეთებთ ლინკებს და ისე ვუთითებთ შემდეგ ტელეფონის ნომერს 
+          ან სხვა საკონტაქტოზ რომ, როგორც ლინკის სახით ისე შეინახოს  -->
+    </div>
+  </section>
+  <div class="credit">created by <span> anri gabaidze</span></div>
+
+</footer>
+  <!--footer section end-->
+
+
+  <!--custom js file-->
+  <script src="js/script.js" defer></script> 
+   <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+  <script>
+    var swiper = new Swiper(".hero-slider", {
+      loop:true,
+      grabCursor: true,
+      effect: "flip",
+        pagination: {
+          el: ".swiper-pagination",
+          clickable:true,
+        },
+      });
+
+  </script>
+
+
+  </body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,509 @@
+*{
+  margin:0px; 
+  padding:0px;
+  text-transform:capitalize;
+  text-decoration:none; 
+  list-style-type:none;
+  box-sizing:border-box;
+  border:none;
+  outline:none;
+}
+/*ეს არის გლობალური ცვლადი და მისი საშუალებით ჩვენ შევძლებთ რომ გამოვიყენოთ ეს ფერები შემდგომ, ცვლადი 
+var ის  საშუალებით*/
+:root{
+  --yellow:#fed330;
+  --red:#e74c3c;
+  --white:#fff;
+  --black:#222;
+  --light-color:#777;
+  --border:.2rem solid var(--black);
+}
+*::selection{
+  background-color:var(--yellow);
+  color:var(--white);
+}
+
+::-webkit-scrollbar{
+  height:.5rem;
+  width:1rem;
+}
+::-webkit-scrollbar-track{
+  background-color:transparent;
+}
+::-webkit-scrollbar-thumb{
+  background-color:var(--yellow);
+}
+html{
+  font-size:62.5%;
+  overflow-x:hidden;
+  scroll-behavior: smooth;
+  stop-opacity:7rem;
+}
+
+/*ამ კოდის საშუალებით ჩვენ შევძელით და გადავიტანეთ მარჯვნივ ჩვენი წარმოდგენილი აიქონები და სიტყვები*/
+section{
+  margin:0 auto;
+  padding:2rem;
+  max-width:1200px;
+}  
+/*profile da logout ის კოდი, გავაერთიანეთ იმიტომ რომ ორივესთან საერთო ინტერესებიგაგვაჩნდა, ხოლო შემდეგ ვანაწევრებთ*/
+.btn,
+.delete-btn{
+   margin-top:1rem;
+   display:inline-block;
+   font-size:1.8rem;
+   padding:1rem 3rem;
+   cursor:pointer;
+   transition:.2s linear;
+}
+/*this is profile setting*/
+.btn{
+  background-color:var(--yellow);
+  color:var(--black);
+}
+/*ეს არის logout ის კოდი*/
+.delete-btn{
+  background-color:var(--red);
+  color:var(--white);
+}
+/*მაუსის გადატარებაზე profile da logoutze რა მოვლენაც მოხდება,მისი სეთინგები*/
+.btn:hover,
+.delete-btn:hover{
+   letter-spacing:.2rem;
+}
+.header{
+  position:sticky;
+  top:0;
+   left:0; 
+   right:0;
+  z-index:1000;
+  background-color:var(--white);
+  border-bottom:var(--border);
+}
+/*ამ კოდის საშუალებით ჩვენ შევძელით და ჩვენი წარმდოგენილი მენიუ გადავიტანეთ ცენტრში და დავანაწილეთ*/
+.header .flex{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:relative;
+}
+/*ამ კოდის მეშვეობით შევძელით და ლოგოზე მოვახდინეთ მანიპულირება და გავუზარდეთ ზომაში და ფერიც შევცვალეთ*/
+.header .flex .logo{
+  font-size:2.5rem;
+  color:var(--black);
+}
+/*ჩვენს მენნიუში ჩამოთვლილ სიტყვების ზომაში გაზრდა შევძელით*/
+.header .flex .navbar a{
+  font-size:2rem;
+  color:var(--black);
+  margin:0 1rem;
+}
+/*როცამაუსს გადავატარებთ რა მოვლენაც მოყვება იმის კოდია**/
+.header .flex .navbar a:hover{
+    color:var(--yellow);
+    text-decoration:underline; /*ქვედა ხაზი გაუჩნდება ყვითელი ფერის,რადგან ფერია თვითონ ყვითელიც*/
+}
+/*აიქოენბზე მანიპულაცია*/ 
+/*იმიტომ ვიყენებთ ჩვენ ამ > * რომ ჩვენს აიქონში გვაქვსს როგორც აიდი ისევე კლასები, ამიტომ ამის საშალებთ
+ჩვენ შეგვიძლია რომ აიდებზეც და კლასებზეც მანიპულაცია მოვახდინოთ*/
+.header .flex .icons > *{
+  margin-left:1.5rem;
+  font-size:2.5rem;
+  color:var(--black);
+  cursor:pointer;
+}
+/*აიქონებზე მაუსის გადატარების დროს რა მოვლენაც მოხდება იმის კოდი*/
+.header .flex .icons > *:hover{
+  color:var(--yellow);
+}
+/*შოპინგის  აიქონის გვერდით არის 3იანი ცალკე მარტო დაწერილი და იმაზე ვახდენთ ეხა წვდომას და ზომაში ვამცირებთ*/
+.header .flex .icons span{
+  font-size:2rem;
+}
+
+/*მენიუს აიქონი გავაქრეთ, რადგან შემდეგ responsiv ის დროს  დაგვჭირდება რომ გამოვაჩინთ*/
+#menu-btn{
+  display:none;
+}
+
+/*ახლა ვიწყებთ მუშაობას Profile მენიუზე */
+
+.header .flex .profile{
+  background-color:var(--white);
+  border:var(--border);
+  padding:1.5rem;
+  text-align:center;
+  position:absolute;
+  top:120%;
+  right:2rem;
+  width:30rem;
+  display:none; /*მანამდე ამ კოდის გაქრობა გვიწევს რადგან შემდეგ დავამატოთ დაწკაპუნებით, ასევე ანიმაციით ვსაზღვრავთ, რამდენ ხანში და სად გაჩნდეს*/
+  animation:fadeIn .2s linear;
+}
+
+.header .flex .profile.active{
+  display:inline-block;
+}
+
+/*ახლა ვიწყებთ უკვე ანიმაციაზე მუშაობას*/
+@keyframes fadeIn{
+  0%{
+    transform:translateY(1rem);
+  }
+}
+/*ეხლა გვიწევს უკვე მუშაობა nameზე*/
+.header .flex .profile .name{
+  font-size:2rem;
+  color:var(--black);
+  margin-bottom:1rem;
+}
+/*ეს არის ექაუნთის კოდი რომელშიც შედის login in and register ფუნქციები*/
+
+.header .flex .profile .account{
+  margin-top:2rem;
+  font-size:2rem;
+  color:var(--light-color);
+}
+/*ხელის გადატარება ლოგინ და რეგისტრის დროს*/
+.header .flex .profile .account a{
+  color:var(--black);
+}
+.header .flex .profile .account a:hover{
+  color:var(--yellow);
+  text-decoration:underline;
+}
+
+/*ვიწყებთ footer da section ზე  მუშაობას ( სადაც box კლასში მოთავსებულია ფოტოები და ტექსტები)*/
+
+.footer .grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+  gap:1.5rem;
+  align-items:flex-start;
+}
+.footer .grid .box{
+  border:var(--border);
+  padding:2rem;
+  text-align:center;
+}
+/*4 ფოტო რომელიც არის განთავსებული მეინ ჯეიზე*/
+.footer .grid .box img{
+  height:10rem;
+  width:100%;
+  object-fit:contain; /*ეს კოდი  ადგენს ცსს ის ელემენეტს ფოტოს ან ვიდეოს, რათა მოერგოს მის კონტეინერს,
+  და ჩაეტიოს ჩარჩოში*/
+  margin-bottom:.5rem;
+}
+/*ჩარჩოს შიგნით არსებულ ყველა ჰ3 ჰიდინგის კოდები*/
+.footer .grid .box h3{
+  margin:1rem 0; 
+  font-size:2rem;
+  color:var(--black);
+}
+/*ვაერთიანებთ ერთცალ p თაგს და დანარჩენ ყველა ლინკებს, რომელიც წერია ჩარჩოს შიგნით(ინფორმაცია)*/
+.footer .grid .box p,
+.footer .grid .box a{
+  font-size:1.7rem;
+  color:var(--red);
+  font-weight:bold;
+  line-height:2;
+}
+/*ხელსი გადატარების დროს(ა და პ თეგებზე ორივეზე ერთად) რა მოვლენა მოხდეს*/
+.footer .grid .box a:hover,
+.footer .grid .box p:hover{
+  text-decoration:underline;
+}
+.footer .grid .box p:hover{
+  cursor:pointer;
+}
+/*credit კლასზე მანიპულაცია*/
+.credit{
+  padding:2rem;
+  font-size:2rem;
+  text-align:Center;
+  background-color:var(--black);
+  color:var(--white);
+}
+/*credit კლას is  span ტექსტზე მანიპულაცია*/
+.credit span{
+  color:aquamarine;
+}
+
+/*აქ ვიწყებთ უკვე hero სექციაზე მუშაობას*/
+/*კონკრეტულად კი აქ წარმოდგენილია სლაიდში მოთავსებული ინფორმაციები რომელსაც შუაში გადავიტანთ*/
+.hero .slide{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap-reverse;
+  gap:2rem;
+}
+/*აქ ვირეაგირეთ კონკრეტულად ფოტოზდე და გავხხადეთ ის უფრო მოქნილი*/
+.hero .slide .image{
+   flex:1 1 40rem;
+}
+/*შემდეგ ფოტოები გავხადეთ სიგანეში 100 პროცენტი*/
+.hero .slide .image img{
+  width:100%;
+}
+/*ანალოგიურად ინფორმაციაც გავხადეთ ისეთი როგორც image კლასი და გადავიტანეთ შუაში რადგან ყოფილყვნენ ერთად*/
+.hero .slide .content{
+  flex:1 1 40rem;
+  text-align:center; 
+}
+/*ეხლა ვიწყებთ კონკრეტულებზე მუშაობას და ვაკეთებთ მანიპულაციებს კონკრეტულ ინფორმაციებზე*/
+
+.hero .slide .content span{
+  font-size:2.5rem;
+  color:var(--red);
+}
+.hero .slide .content h3{
+  margin:1rem 0;
+  font-size:6rem;
+  color:var(--black);
+}
+.hero .slide .content span:hover{
+  letter-spacing:0.2rem;
+}
+
+/*ახლა უკვე ვაკეთებთ  კატეგორიის სათაურს*/
+.title{
+  text-align:center;
+  margin-bottom:2.5rem;
+  font-size:4rem;
+  color:var(--black);
+  text-transform:uppercase;
+}
+/*ჩვენი ახალი ჩაფთერის სექცია კატეგორიის ზოგად სეთინგებს*/
+.category .box-container{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+  gap:1.5rem;
+  align-items:flex-start;
+}
+/*აქ შედის კონრკეტუალდ ფოტოები და სათაურები*/
+.category .box-container .box{
+  border:var(--border);
+  padding:2rem;
+  text-align:center;
+}
+.category .box-container .box img{
+  width:100%;
+  height:15rem;
+  object-fit:contain;
+}
+/*ეს არის კომენტარი საჭმელების კატეგორიის ჰ3 თეგებზე სადაც არის დართული სათაურები*/
+.category .box-container .box h3{
+  font-size:2rem;
+  margin-top:1.5rem;
+  color:var(--black);
+}
+/*ხელის გადატარების დროს არა კონკრეტულად რომელიმე ტექსტი არამედ მთელი უჯრა გაშავდეა*/
+.category .box-container .box:hover{
+  background-color:var(--black);
+}
+/*ამის მეშვეობით ჩვენ შევძლებთ რომ ფოტო გადმოვიტანოთ უფრო წინა პლანზე,თუა დავუშვათ გამოქუბელი და შიგნით არ ჩანს ჩვენი
+წარმოდგენილი ფოტო და საჭიროა რომ უფრო ნათელი იყოს რომ გამოჩნდეს, ვწერთ filter:invert(1)რიცხვში იწერება მნიშვნელბები
+რაც უფრო მეტი იქნება ის მით უფრო ნათელი იქნება*/
+.category .box-container .box:hover img{
+  filter:invert(1);
+}
+.category .box-container .box:hover h3{
+   color:var(--white);
+}
+
+/*მოკლედ აქ ვიწყებთ უკვე ბოლო პროოდუქტების სიის ჩამონათვალზე მანიპულირებას :)*/
+
+.products .box-container{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, 33rem);
+  justify-content:center;
+  align-items:flex-start;
+  gap:1.5rem;
+}
+/*აქ უვკე უშუალოდ ვაკეთებთ ბოქსზე გარედან მანიპულაციას
+არანაირი დაწვრიმლანება ფოტოების ან რამე, ყველაფერზე ერთად, ფოტოები ტექსტები და ასე შემდეგ
+და ვუკეთებთ საზღვარს და შიგნთ ვაშრებთ ერთმანეთისგან*/
+.products .box-container .box{
+  border:var(--border);
+  padding:2rem;
+  position:relative;
+  overflow:hidden;
+}
+/**აქ უკვე ფოტოებს ვსვამთ ამჩარჩოში*/
+.products .box-container .box img{
+  height:25rem;
+  width:100%;
+  object-fit:contain;
+  margin-bottom:1rem;
+  /*Object-fit CSS თვისება ადგენს, თუ როგორ უნდა შეიცვალოს შეცვლილი ელემენტის შინაარსი*/
+}
+/*ახლა უკვე ბოქსში მოთავსებულ აიქონებზე ვიწყებთ წვდომას*/
+
+.products .box-container .box .fa-eye,
+.products .box-container .box .fa-shopping-cart{
+ position:absolute;
+ top:1rem;
+ height:4.5rem;
+ width:4.5rem;
+ line-height:4.3rem;
+ border:var(--border);
+ background-color:var(--white);
+ cursor:pointer;
+ font-size:2rem;
+ color:var(--black);
+ transition: .2s linear;
+} 
+/*აიქონეზე ხელის გადატარების დროს რა მოვლენაც მოხდეს იმის კოდი*/
+.products .box-container .box .fa-eye:hover,
+.products .box-container .box .fa-shopping-cart:hover{
+  background-color:var(--black);
+  color:var(--white);
+}
+
+
+.products .box-container .box .fa-eye{
+  left:-10rem;
+}
+.products .box-container .box .fa-shopping-cart{
+  right:-10rem;
+}
+
+
+.products .box-container .box:hover .fa-eye{
+  left:1rem;
+}
+.products .box-container .box:hover .fa-shopping-cart{
+  right:1rem;
+}
+
+/*პროდუქტის ზოგადი სახელწოდებები, ფასთ ფუდი და ასე შემდეგ*/
+.products .box-container .box .cat{
+  font-size:1.8rem;
+  color:var(--red);
+  font-weight:bold;
+}
+
+.products .box-container .box .cat:hover{
+  color:var(--red);
+  text-decoration:underline;
+}
+/*საჭმელების სახელები, ბურგერი, პიცა და ასე შემდეგ*/
+.products .box-container .box .name{
+  font-size:2rem;
+  color:var(--black);
+  margin:0.8rem 0;
+}
+/*flex ში შემავალი ყველა ელეემენტი როგორიცაა ფასი, და
+ინფათი მაგას გადავჭიმავთ ჰორიზონტალურად და გავიტანთ ცენტრში*/
+.products .box-container .box .flex{
+    display:flex;
+    align-items:center;
+    gap:1.5rem;
+} 
+/*აქ მივწვდით ფასს, სანამ მას მივწვდებოდით მის წინ არ არსებული
+ყველა კარი უნდა გავხსნათ :) ანუ ბოქსები*/
+.products .box-container .box .flex .price{
+  margin-right:auto;
+  font-size:2.5rem;
+  color:var(--black);
+}
+.products .box-container .box .flex .price span{
+   color:var(--red);
+   font-weight:bold;
+   font-size:2.2rem;
+}
+/*ეს არის კოდი როდესაც 1იანი ციფრი რო გვაქვს გაკეთებული სადაც
+ვუკვეთავთ ჩვენს საჭმელებს, აი იმის კოდია*/
+.products .box-container .box .flex .qty{
+   border:var(--border);
+   padding:1rem;
+   color:var(--black);
+   font-weight:bold;
+}
+.products .more-btn{
+  margin-top:2rem;
+  text-align:center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*responsive web design starts*/
+
+@media (max-width:991px){ /*ეს რესფონსივი კეთდება კომპიუტერების ეკრანისთვის*/
+   html{
+    font-size:55%;
+   }
+   .title{
+    font-size:3rem;
+   }
+}
+@media (max-width:768px){ /*ხოლო ეს კი კეთდება პლანშეტებისთვის*/
+   #menu-btn{
+ display:inline-block; /*768px ის ქვევით გამოჩდება მენიუს აიქონი, ის არის განკუთვნილი პლაანშეტის და ტელეს დევაისისთვის*/
+   }
+   .header .flex .navbar{
+     position:absolute;
+     top:99%;
+     left:0; right:0;
+     border-top:var(--border);
+     border-bottom:var(--border);
+     background-color:var(--white);
+     transition: .2s linear;
+     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+   }
+   .header .flex .navbar.active{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+
+   }
+   /*ეს არის პირდაპირ მენიუს ჩამონათვალისთვის განკუთვნილი*/
+   .header .flex .navbar a{
+         display:block; /*ვერტიკალურად ჩამოლაგდება ჩვენი მენიუ და მარგინის საშუალებით გარე სივრცე გაეზრდება*/
+         margin:2rem;
+   }
+}
+@media (max-width:450px){ /*ეს ყველაფერი კი კეთდება ტელეეფონებისათვის*/
+  html{
+   font-size:50%;
+  }
+  .header .flex .logo{ /*logo (zeus restorant) 450 ის ქვევით იქნება ზომაში შემცირებული*/
+    font-size:2rem;
+  }
+  .hero .slide .content h3{
+    font-size:5rem;
+  }
+  .products .box-container{
+    grid-template-columns: 1fr;
+  }
+}
+
+/*responsive web design ends*/
+
+
+
+
+
+
